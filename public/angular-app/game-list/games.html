@@ -1,0 +1,93 @@
+  
+<h2>{{vm.title}}</h2>
+<form class="form-inline" style="margin: 20px;" ng-submit="vm.searchGame()">
+    <div class="form-group">
+     <input type="text" class="form-control" placeholder="Search" ng-model="vm.search">
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-left: 5px;">Search</button>
+  </form>
+
+<ul>
+    <li ng-repeat="game in vm.games">
+        <a ng-href="#!/game/{{game._id}}">{{game.title}}</a>
+    </li>
+</ul>
+
+<div ng-if="vm.isLoggedIn()">
+
+    <form name="vm.gameForm" ng-submit="vm.addGame()" style="width: 500px;">
+
+        <h4>
+            To add a new game please fill in all the fields below: <br>
+
+        </h4>
+
+        <div class="form-group">
+            <label for="title">Title: </label>
+            <input type="text" name="title" class="form-control" required ng-model="vm.newGameTitle"
+                style="color:black" />
+
+        </div>
+
+        <div class="form-group">
+            <label for="price"> Price: </label>
+            <input type="text" name="price" class="form-control" required ng-model="vm.newGamePrice"
+                style="color:black" />
+        </div>
+
+        <div class="form-group">
+            <label for="year">Year of Publication: </label>
+            <input type="text" name="year" class="form-control" required ng-model="vm.newGameYear"
+                style="color:black" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="rating">Rating: </label>
+            <input type="number" ng-min=1 ng-max=5 name="rating" class="form-control" required
+                ng-model="vm.newGameRating" style="color:black" />
+
+            <span ng-show="vm.gameForm.rating.$dirty && vm.gameForm.rating.$invalid" style="color:red">Rating must be
+                between 1 and 5.</span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="minPlayers">Minimum Number of Players: </label>
+            <input type="number" ng-min=1 ng-max=10 class="form-control" name="minPlayers"
+                required ng-model="vm.newGameMinPlayers" style="color:black" />
+            <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid" class="form-control"
+                style="color:red">Minimum
+                players must be between 1 and 10.</span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="maxPlayers">Maximum Number of Players: </label>
+            <input type="number" ng-min=1 ng-max=10 name="maxPlayers" class="form-control"
+                required ng-model="vm.newGameMaxPlayers" style="color:black" />
+
+            <span ng-show="vm.gameForm.maxPlayers.$dirty && vm.gameForm.maxPlayers.$invalid" class="form-control"
+                style="color:red">Maxinum
+                players must be between 1 and 10.</span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="minAge">Minimum Recommended Player Age: </label>
+            <input type="text" name="minAge" required ng-model="vm.newGameMinAge"
+                class="form-control" style="color:black" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="designer">Designer name: </label>
+            <input type="text" name="designer" required ng-model="vm.newGameDesigner"
+                class="form-control" style="color:black" />
+        </div>
+
+
+        <button type="submit" class="btn-success">Add Game</button><BR />
+
+    </form>
+</div>

@@ -1,0 +1,32 @@
+<div style="padding: 30px;">
+
+    <div ng-show="vm.deleteSuccess" class="alert alert-success" role="alert">
+        Game is successfully deleted
+    </div>
+    
+    <div ng-show="vm.deleteSuccess == false" class="alert alert-danger" role="alert">
+        Error while deleting game
+    </div>
+
+    <h2 style="padding-bottom: 10px;">
+        Information about game
+  
+    </h2>
+    
+    <h3>{{vm.game.title | uppercase}} 
+        <game-rating stars={{vm.rating}}></game-rating>
+    </h3>
+    
+    
+    <p> 
+        Price: {{vm.game.price | currency}} <br>
+        Minimun Players: {{vm.game.minPlayers}}<br>
+        Maximum Players: {{vm.game.maxPlayers}}<br>
+        Minimun Age: {{vm.game.minAge}}<br>
+        Publisher: {{vm.game.publisher.name}} <br>
+    </p>
+
+    <button class="btn  btn-danger"  ng-click="vm.deleteGame(vm.game._id)">Delete</button>
+    <a class="btn  btn-success"  ng-href="#!/games">Back</a>
+
+</div>

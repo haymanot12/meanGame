@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="meanGames">
+    <head>
+        <title>MEAN Games</title>
+        <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <script src="https://kit.fontawesome.com/84846157dc.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+       <games-navigation ></games-navigation>
+       <div class="container">
+            <div ng-view></div>
+
+       </div>
+        <!-- <h1>MEAN Games homepage</h1> -->
+
+
+        <footer class="footer">
+            <div >
+                <p class="test-muted text-center">
+                    <a href="https://compro.miu.edu" target="_blank">
+                        <img src="/images/compro-web-logo-442x112.png" height="50" alt="MIU compro">
+                    </a>
+                    <br>
+                    <small class="text black-50 text-center">
+                        &copy; 2021 Maharishi International University. All Rights Reserved.
+                    </small>
+                </p>
+            </div>
+        </footer>
+
+        <script src="jquery/jquery-3.5.1.min.js"></script>
+
+        <script src="angular/angular.js"></script>
+        <script src="angular-route/angular-route.js"></script>
+        <script src="angular-jwt/dist/angular-jwt.js"></script>
+        <script src="angular-app/app.js"></script>
+        <script src="angular-app/game-data-factory/game-data-factory.js"></script>
+        <script src="angular-app/game-list/game-list-controller.js"></script>
+        <script src="angular-app/game-display/game-display-controller.js"></script>
+        <script src="angular-app/register/register-controller.js"></script>
+        <script src="angular-app/login/login-controller.js"></script>
+        <script src="angular-app/navigation-directive/navigation-directive.js"></script>
+        <script src="angular-app/authentication/auth-factory.js"></script>
+        <script src="angular-app/authentication/auth-interceptor.js"></script>
+        <script src="../node_modules/angular-jwt/anguular-jwt.js"></script>
+
+
+        <script src="angular-app/game-rating/game-rating-directive.js"></script>
+
+
+    </body>
+</html>
